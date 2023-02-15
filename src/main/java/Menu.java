@@ -7,7 +7,6 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Menu {
-    private final Scanner scanner = new Scanner(System.in);
     private final List<Command> commandList;
 
     public Menu() {
@@ -38,7 +37,7 @@ public class Menu {
                     to get user by id enter 6;
                     to get user by first_name enter 7;
                     to exit enter - finish""");
-            String line = scanner.nextLine();
+            String line = new Scanner(System.in).nextLine();
             if (line.equals("finish")) return;
             parseUserInput(line);
         }
@@ -48,6 +47,7 @@ public class Menu {
     private void parseUserInput(String line) {
         DBConnector dbConnector = new DBConnector();
         Connection connection = dbConnector.getConnection();
+        Scanner scanner = new Scanner(System.in);
         String regex = "([1-7])";
         if (!line.matches(regex)) {
             System.out.println("Unknown command, try again!");

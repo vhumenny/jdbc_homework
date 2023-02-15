@@ -15,11 +15,11 @@ public class UpdateUserCommand implements Command {
     public void execute(Scanner scanner, Connection connection) {
         System.out.println("please enter id of user:");
         int id = scanner.nextInt();
-        System.out.println("please enter first_name:");
+        System.out.println("please enter new first_name:");
         String firstName = scanner.next();
-        System.out.println("please enter new last_name value:");
+        System.out.println("please enter new last_name:");
         String lastName = scanner.next();
-        System.out.println("please enter new last_name value:");
+        System.out.println("please enter new age:");
         int age = scanner.nextInt();
         try {
             PreparedStatement prepareStatement = connection.prepareStatement
